@@ -28,15 +28,14 @@ export default () => {
   return (
     <Container>
     <Row>
-      <Col className="d-flex mt-5 flex-column justify-content-between align-items-center">
+      <Col className="d-flex mt-5 flex-column cursor-pointer justify-content-between align-items-center">
         {
           currentStr.map((c, key)=>{
             return (
-              <Cardy key={key}>
+              <Cardy role="button" key={key} onClick={()=>navigate(`/starship/${key}`, {dades: currentStr})}>
                 <Image />
-                <h4>{c.name}</h4>
+                <h4 >{c.name}</h4>
                 <h5>{c.model}</h5>
-                <Button variant="outline-dark" size="sm" onClick={()=>navigate(`/starship/${key}`, {dades: currentStr})}>+ info</Button>
               </Cardy>
               )
           })

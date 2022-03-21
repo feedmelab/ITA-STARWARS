@@ -9,13 +9,15 @@ export const Cardy = styled(Card)`
   padding: 2rem;
   margin-bottom: 1rem;
   background-color: #2233;
-  align-items: center;
+  align-items: start;
   justify-content: start;
   h4 {
       color: #fff;
+      font-size: 1rem;
   }
   h5 {
       color: #777;
+      font-size: 0.8rem;
   }
 `;
 export const smallButton = css`
