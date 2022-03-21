@@ -3,9 +3,10 @@ import { Container } from "react-bootstrap";
 import Header from "../components/Header";
 
 import Nav from "../components/Nav/Nav";
+import StarShip from "../components/StarShip/StarShip";
 
 
-const Starship = () => {
+const Starship = ({props}) => {
     const { id } = useParams();
     return (
     <div className="App">
@@ -14,9 +15,7 @@ const Starship = () => {
             <Nav></Nav>
         </Container>
         <section>
-            <Container>
-                <h2>news soon {id}</h2>
-            </Container>
+            <StarShip/>
         </section>
     </div>)
 }

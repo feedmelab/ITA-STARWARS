@@ -1,9 +1,14 @@
-import styled from 'styled-components';
-
+import styled, { keyframes } from 'styled-components';
+const fadeIt = keyframes`
+    to{ opacity: 1}
+`;
 export const Nav = styled.div`
   display: flex;
   justify-cotent: center;
-  border:1px solid #777;
+  border-left:1px solid #777;
+  border-right:1px solid #777;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
   ul {
       display: flex;
       width: auto;
@@ -11,15 +16,14 @@ export const Nav = styled.div`
       padding: 0;
   }
   ul li {
-    padding:0 .3rem;
+    padding: 0.3rem;
     list-style: none;
   }
   a {
       color: #fff;
       opacity: 0.6;
-      transition: 1s;
       &:hover{
-        opacity: 1.0;
+        animation: 0.5s ${fadeIt} forwards;
       }
   }
  `;

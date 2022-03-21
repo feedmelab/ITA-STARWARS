@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
             top: 0; left: 0;
             width: 100%; 
             height:${getHeightDoc().height}px;
-            background-image: url(bg_stars2.jpg);
+            background-image: url("bg_stars2.jpg");
             background-size: contain;
             opacity: 0.1;
         }

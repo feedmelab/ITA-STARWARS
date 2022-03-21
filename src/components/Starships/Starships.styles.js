@@ -11,6 +11,12 @@ export const Cardy = styled(Card)`
   background-color: #2233;
   align-items: center;
   justify-content: start;
+  h4 {
+      color: #fff;
+  }
+  h5 {
+      color: #777;
+  }
 `;
 export const smallButton = css`
     width: 1rem;
