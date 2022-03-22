@@ -1,7 +1,6 @@
 
 import { Col, Container, Row } from 'react-bootstrap';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Foto }  from './StarShip.styles';
 
 
@@ -15,13 +14,13 @@ const StarShip =  ({data}) => {
   return (
   <Container>
     <Row>
-      <Col className="d-flex flex-column align-items-center">
+      <Col className="d-flex justify-content-center align-items-center">
         <Foto>
           <img src={ship.image} alt="A view of" />
+          <h2>{ship.name}</h2>
+          <h3>{ship.model}</h3>
+          <h4>{ship.manufacturer}</h4>
         </Foto>
-        <h2>{ship.name}</h2>
-        <h3>{ship.model}</h3>
-        <h4>{ship.manufacturer}</h4>
       </Col>
     </Row>
   </Container>

@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         }
 	}
     @font-face {
-        font-family: myFont;
+        font-family: "Roboto";
         src: url(${font});
     }
 `;
