@@ -10,8 +10,10 @@ export default () => (
         <Col className="d-flex justify-content-center">
              <Nav>
               <ul>
-                <li><Link to="/">HOME</Link> | </li>
-                <li><Link to="/starships">STARSHIPS</Link> | </li>
+                <li><Link to="/">HOME</Link></li>
+                <li>|</li>
+                <li><Link to="/starships">STARSHIPS</Link></li>
+                <li>|</li>
                 <li><Link to="/cinema">CINEMA</Link></li>
               </ul>
             </Nav>

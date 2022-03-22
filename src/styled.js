@@ -1,25 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 const font = "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
-const getHeightDoc = () => {
-  const { scrollHeight: height } = document.body;
-  return {
-    height
-  };
-}
-console.log(getHeightDoc().height)
+// const getHeightDoc = () => {
+//   const { scrollHeight: height } = document.body;
+//   return {
+//     height
+//   };
+// }
+
 export const GlobalStyle = createGlobalStyle`
 	body {
-		background-color: black;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; 
-            height:${getHeightDoc().height}px;
-            background-image: url("bg_stars2.jpg");
-            background-size: contain;
-            opacity: 0.1;
-        }
+        background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)), url("bg_stars2.jpg");
+        background-attachment: fixed;
 	}
     @font-face {
         font-family: Roboto;

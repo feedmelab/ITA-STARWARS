@@ -1,16 +1,4 @@
-body {
-  margin: 0;
-  padding: auto;
-  font-family: Roboto, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #0E0E0E;
- 
-  /* background-image: url(/public/bg_stars.jpg);
-  background-size: cover; */
-}
+
 .app {
     margin: 0px auto;
     padding: 2rem 0;
