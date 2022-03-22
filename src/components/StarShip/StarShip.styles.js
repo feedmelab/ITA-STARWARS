@@ -1,6 +1,9 @@
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
-// export const Test = styled.div`
-//  display: flex;
-// `;
-//
+
+export const Foto = styled.div`
+    width:90%;
+    margin-top: 2rem;
+    object-fit: cover;
+    border-bottom:2px dotted #888;
+`;

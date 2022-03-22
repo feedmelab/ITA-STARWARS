@@ -40,6 +40,7 @@ export default () => {
     <Container>
     <Row>
       <Col className="d-flex mt-5 flex-column cursor-pointer justify-content-between align-items-center">
+      
         {
           currentStr.map((c, key)=>{
             return (
@@ -51,6 +52,7 @@ export default () => {
               )
           })
         }
+        <p className="loading">Loading from Star Wars API...please wait.</p>
       </Col>
     </Row>
     </Container>
