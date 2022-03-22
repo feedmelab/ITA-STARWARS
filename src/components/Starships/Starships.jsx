@@ -9,21 +9,32 @@ export default () => {
   
   const [starships, setStarships]  = useState([]);
   const [currentStr, setCurrentStr] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const navigate = useNavigate();
   
   useEffect(()=>{
     const fetchData = async () => {
-      const data = await axios.get("https://swapi.dev/api/starships/?page=1");
+      const data = await axios.get(`https://swapi.dev/api/starships/?page=${currentPage}`);
       const resultParsed = data.data;
-      setStarships(resultParsed);
-      setCurrentStr([...resultParsed.results]) 
+      setStarships([...resultParsed.results]);
+      setCurrentStr([...resultParsed.results])
+      
     }
     fetchData()
       .catch(console.error);
-  },[]);
+  },[currentPage]);
+  
+  const getSpecificItem = (id) => {
+    const item = currentStr.filter((a, index)=>id===index);
+    return {...item};
+  }
 
-
+  
+  const paginateFetch = () => {
+    console.log("currentpage:",currentPage);
+  }
+  
   
   return (
     <Container>
@@ -32,9 +43,9 @@ export default () => {
         {
           currentStr.map((c, key)=>{
             return (
-              <Cardy role="button" key={key} onClick={()=>navigate(`/starship/${key}`, {dades: currentStr})}>
+              <Cardy role="button" key={key} onClick={()=>navigate(`/starship/${key}`, { state: { data: getSpecificItem(key)} })}>
                 <Image />
-                <h4 >{c.name}</h4>
+                <h4>{c.name}</h4>
                 <h5>{c.model}</h5>
               </Cardy>
               )

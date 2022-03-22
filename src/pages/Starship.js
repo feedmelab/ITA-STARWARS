@@ -1,13 +1,16 @@
-import { useParams } from "react-router-dom";
+
 import { Container } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 
 import Nav from "../components/Nav/Nav";
 import StarShip from "../components/StarShip/StarShip";
 
+//const { id, color } = state;
 
-const Starship = ({props}) => {
-    const { id } = useParams();
+const Starship = () => {
+    const location = useLocation();
+    const {state} = location;
     return (
     <div className="App">
         <Header/>
@@ -15,7 +18,7 @@ const Starship = ({props}) => {
             <Nav></Nav>
         </Container>
         <section>
-            <StarShip/>
+            <StarShip data={state.data}/>
         </section>
     </div>)
 }
