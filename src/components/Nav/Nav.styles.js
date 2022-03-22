@@ -5,8 +5,7 @@ const fadeIt = keyframes`
 export const Nav = styled.div`
   display: flex;
   justify-cotent: center;
-  border-left:1px solid #777;
-  border-right:1px solid #777;
+
   padding-left: 0.4rem;
   padding-right: 0.4rem;
   ul {
