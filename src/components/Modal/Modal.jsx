@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import { CloseModalButton, ModalD, ModalDWrapper, ModalLogo } from './Modal.styles';
 import LogIn from '../LogIn/LogIn';
 import SignIn from '../SignIn/SignIn';
-import Logo from '../Header/Logo/Logo';
+
 
 const Modal = ({showModal, setShowModal, wichPage}) => {
  const modalRef = useRef();
@@ -25,7 +25,7 @@ const Modal = ({showModal, setShowModal, wichPage}) => {
         <ModalDWrapper showModal={showModal}>
         <ModalLogo src={require('./logo.png')} alt="Logo"/>
         {
-          wichPage==='login'? <LogIn/>:<SignIn />
+          wichPage==='login'? <LogIn setShowModal={setShowModal} />:<SignIn setShowModal={setShowModal}/>
         }
         <CloseModalButton aria-label='Close modal' onClick={()=>setShowModal(prev => !prev)} />
         </ModalDWrapper>

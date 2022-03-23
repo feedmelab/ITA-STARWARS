@@ -25,7 +25,7 @@ export default () => {
     }
     fetchData()
       .catch(console.error);
-  },[currentPage, starships]);
+  },[currentPage]);
   
   const getSpecificItem = (id) => {
     const item = currentStr.filter((a, index)=>id===index);

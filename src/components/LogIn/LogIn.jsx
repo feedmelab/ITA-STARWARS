@@ -2,8 +2,21 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
  
 
-const LogIn = () => 
+const LogIn = ({setShowModal}) => 
 {
+  const [isLogedIn, setIsLogedIn] = useState(
+    window.localStorage.getItem("isLogedIn")
+  );
+  
+  const setLocalStorage = value => {
+    try {
+      setIsLogedIn(value);
+      window.localStorage.setItem("isLogedIn",value);
+    } catch(error){
+      console.error(error)
+    }
+
+    }
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordError, setpasswordError] = useState("");
@@ -37,14 +50,20 @@ const LogIn = () =>
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    handleValidation();
+    setLocalStorage(handleValidation());
+    setShowModal(false);
   };
 
 return (
   <div className="LogInWrapper">
       <form id="loginform" onSubmit={loginSubmit}>
           <Container>
-            <h3>Please provide valid credentials to access</h3>
+            {
+              (isLogedIn)? 
+              (
+                    <h3>Whats your problem?<br />Your already in!!</h3>
+              ) : (
+                <><h3>Please provide valid credentials to access</h3>
             <div className="form-group">
                 <label>Email</label>
                 <input type="email" className="form-control" placeholder="Enter email" aria-describedby="emailHelp" onChange={(event) => setEmail(event.target.value)} />
@@ -59,7 +78,8 @@ return (
                     {passwordError}
                   </small>
             </div>
-            <button type="submit" className="btn btn-dark btn-lg btn-block">Log in</button>
+            <button type="submit" className="btn btn-dark btn-lg btn-block">Log in</button></>)
+            }
           </Container>
       </form>
   </div>
