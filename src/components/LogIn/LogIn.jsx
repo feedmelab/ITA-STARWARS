@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 
 const LogIn = ({setShowModal}) => 
 {
-  const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn')?window.localStorage.getItem('isLogedIn'):false);
+  const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn'));
   const setLocalStorage = value => {
     try {
       setIsLogedIn(value);
@@ -47,7 +47,7 @@ const LogIn = ({setShowModal}) =>
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    setLocalStorage(handleValidation());
+    if (handleValidation()) setLocalStorage('true');
     setShowModal(false);
   };
 
@@ -56,10 +56,7 @@ return (
       <form id="loginform" onSubmit={loginSubmit}>
           <Container>
             {
-              (isLogedIn===true)? 
-              (
-                    <h3>Whats your problem?<br />Your already in!!</h3>
-              ) : (
+              
                 <><h3>Please provide valid credentials to access</h3>
             <div className="form-group">
                 <label>Email</label>
@@ -75,7 +72,7 @@ return (
                     {passwordError}
                   </small>
             </div>
-            <button type="submit" className="btn btn-dark btn-lg btn-block">Log in</button></>)
+            <button type="submit" className="btn btn-dark btn-lg btn-block">Log in</button></>
             }
           </Container>
       </form>

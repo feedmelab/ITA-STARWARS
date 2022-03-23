@@ -8,14 +8,14 @@ import Modal from "../components/Modal/Modal";
 
 export default () => {
     
-    const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn')?window.localStorage.getItem('isLogedIn'):false);
+    const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn'));
     const [showModal, setShowModal] = useState(false);
     const [wichPage, setWichPage] = useState('login');
     const openModal = (page)=> {
         setWichPage(page?'login':'logup');  
         setShowModal(prev => !prev);
     }
-    console.log(isLogedIn)
+    //console.log(isLogedIn)
 return (
 <div className="App">
 
@@ -26,7 +26,7 @@ return (
     </Container>
     <section>
     {
-        (isLogedIn===true)? <Starships />:<Container className="d-flex justify-content-center align-items-center h-100"><Row><Col className="text-warning mt-5 h-100 d-flex justify-content-center align-items-center">In order to visit this page you must be logged in.</Col></Row></Container> 
+        (window.localStorage.getItem('isLogedIn')==='true')? <Starships />:<Container className="d-flex justify-content-center align-items-center h-100"><Row><Col className="text-warning mt-5 h-100 d-flex justify-content-center align-items-center">In order to visit this page you must be logged in.</Col></Row></Container> 
     } 
     </section>
 </div>

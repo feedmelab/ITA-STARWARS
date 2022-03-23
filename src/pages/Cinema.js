@@ -9,7 +9,7 @@ import ReactPlayer from 'react-player/youtube'
 
 export default () => 
 {
-   const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn')?window.localStorage.getItem('isLogedIn'):false);
+   const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn'));
     const [url, setUrl] = useState("https://www.youtube.com/watch?v=cen-yPSEOiE");
 
    const handleURL = (url) => {
@@ -31,7 +31,7 @@ export default () =>
         </Container>
         <section>
          {
-        (isLogedIn===true)? (<Container className="mt-5 d-flex align-items-center justify-content-center flex-column">
+        (window.localStorage.getItem('isLogedIn')==='true')? (<Container className="mt-5 d-flex align-items-center justify-content-center flex-column">
                 <Row className="d-flex flex-column">
                     <Col>
                         <ReactPlayer url={url} playing={true} />
