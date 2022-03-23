@@ -4,7 +4,8 @@ const showIt = keyframes`
     to{ opacity: 1}
 `;
 const smurfIt = keyframes`
-    to{ border-radius: 50rem}
+    to{ border-radius: 50rem;
+    opacity: 0.8;}
 `;
 export const Cardy = styled(Card)`
   display:flex;
@@ -15,7 +16,7 @@ export const Cardy = styled(Card)`
   background-color: #2233;
   align-items: start;
   justify-content: start;
-  opacity: 1;
+  
   border-radius: 1rem;
   //animation: 2s ${showIt} forwards;
   h4 {
