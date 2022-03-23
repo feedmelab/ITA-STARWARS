@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { CloseModalButton, ModalD, ModalDWrapper } from './Modal.styles';
 
-const Modal = ({showModal, setShowModal}) => {
+const Modal = ({showModal, setShowModal, wichPage}) => {
  const modalRef = useRef();
  const animando = useSpring({
    config: {
@@ -20,6 +20,9 @@ const Modal = ({showModal, setShowModal}) => {
       <ModalD ref={modalRef} onClick={closeModal}>
       <animated.div style={animando}>
         <ModalDWrapper showModal={showModal}>
+        {
+          wichPage==='login'? (<div>Log In</div>):(<div>Sign In</div>)
+        }
         <CloseModalButton aria-label='Close modal' onClick={()=>setShowModal(prev => !prev)} />
         </ModalDWrapper>
       </animated.div>
