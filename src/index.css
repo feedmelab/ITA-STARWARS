@@ -5,7 +5,6 @@
     display: flex;
     justify-content: center;
     border-left:1px solid rgb(126, 126, 126);
-    background-color: #0A0B0B;
     max-width: 80%;
     text-align:center;
 }
@@ -14,7 +13,7 @@ a {
   text-decoration: none;
 }
 a.active ,a.active:hover {
-  color:red !important;
+  color:rgb(153, 196, 0) !important;
   opacity: 1 !important;
   transition: none !important;
   animation: none !important;

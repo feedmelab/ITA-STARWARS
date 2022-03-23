@@ -57,7 +57,7 @@ export default () => {
           })
           
         }
-        {insetLoad?<p className="loading text-light">Loading from an external API, please wait...</p>:<button  className="btn btn-link" role="link" onClick={()=>fetchMore()}>Load more...</button>}
+        {insetLoad?<p className="loading text-light">Loading from an external API, please wait...</p>:<button  className="btn btn-link" role="link" onClick={()=>fetchMore()}>View more...</button>}
       </Col>
     </Row>
     <Row><Col></Col></Row>
