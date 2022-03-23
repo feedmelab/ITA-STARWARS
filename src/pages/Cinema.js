@@ -9,7 +9,9 @@ import ReactPlayer from 'react-player/youtube'
 
 export default () => 
 {
-   const [url, setUrl] = useState("https://www.youtube.com/watch?v=cen-yPSEOiE")
+   const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn')?window.localStorage.getItem('isLogedIn'):false);
+    const [url, setUrl] = useState("https://www.youtube.com/watch?v=cen-yPSEOiE");
+
    const handleURL = (url) => {
         setUrl(url);
    }
@@ -28,7 +30,8 @@ export default () =>
             <Nav></Nav>
         </Container>
         <section>
-            <Container className="mt-5 d-flex align-items-center justify-content-center flex-column">
+         {
+        (isLogedIn===true)? (<Container className="mt-5 d-flex align-items-center justify-content-center flex-column">
                 <Row className="d-flex flex-column">
                     <Col>
                         <ReactPlayer url={url} playing={true} />
@@ -42,7 +45,8 @@ export default () =>
                         onClick={()=>handleURL("https://www.youtube.com/watch?v=cen-yPSEOiE")}>Episode X</button>
                     </Col>
                 </Row>
-            </Container>
+            </Container>):<Container className="d-flex justify-content-center align-items-center h-100"><Row><Col className="text-warning mt-5 h-100 d-flex justify-content-center align-items-center">In order to visit this page you must be logged in.</Col></Row></Container> 
+        }
         </section>
         </div>);
 }

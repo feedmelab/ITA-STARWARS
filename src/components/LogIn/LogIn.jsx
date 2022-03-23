@@ -4,10 +4,7 @@ import { Container } from 'react-bootstrap';
 
 const LogIn = ({setShowModal}) => 
 {
-  const [isLogedIn, setIsLogedIn] = useState(
-    window.localStorage.getItem("isLogedIn")
-  );
-  
+  const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn')?window.localStorage.getItem('isLogedIn'):false);
   const setLocalStorage = value => {
     try {
       setIsLogedIn(value);
@@ -59,7 +56,7 @@ return (
       <form id="loginform" onSubmit={loginSubmit}>
           <Container>
             {
-              (isLogedIn)? 
+              (isLogedIn===true)? 
               (
                     <h3>Whats your problem?<br />Your already in!!</h3>
               ) : (

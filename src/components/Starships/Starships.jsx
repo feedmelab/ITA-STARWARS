@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {  Col, Container, Row, Button, Image } from 'react-bootstrap';
-import { Cardy, smallButton } from './Starships.styles';
+import { Cardy } from './Starships.styles';
 import { useNavigate } from 'react-router-dom';
 
 export default () => {
@@ -32,7 +32,6 @@ export default () => {
     return {...item};
   }
 
-  
   const fetchMore = () => {
   setCurrentPage(currentPage+1);
   }
@@ -44,7 +43,6 @@ export default () => {
     <Container>
     <Row>
       <Col className="d-flex mt-5 flex-column cursor-pointer justify-content-between align-items-center">
-       
         {
           currentStr.map((c, key)=>{
             return (
@@ -55,7 +53,6 @@ export default () => {
               </Cardy>
               )
           })
-          
         }
         {insetLoad?<p className="loading text-light">Loading from an external API, please wait...</p>:<button  className="btn btn-link" role="link" onClick={()=>fetchMore()}>View more...</button>}
       </Col>
