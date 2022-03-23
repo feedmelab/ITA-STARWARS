@@ -9,6 +9,7 @@ export const HomeData = styled(Container)`
     
     h2 {
         color:white;
+        text-align: center
     }
     .col {
         width:100%;
