@@ -15,18 +15,12 @@ const StarShip =  ({data}) => {
   const navigate = useNavigate();
   return (
   <Container>
-  <Row>
-    <Col>
-      
-    </Col>
-  </Row>
     <Row>
       <Col className="d-flex justify-content-center align-items-center">
-       
         <Foto>
         <div>
           <ul className='list-group'>
-            <li className='list-item'><button className="btn btn-link" role="link"  onClick={()=>navigate(`/starships`, { state: { data: 'void'} })}>Back to StarShips</button></li>
+            <li className='list-item'><button className="btn btn-link" role="link"  onClick={()=>navigate(`/starships`, { state: { data: 'por aqui le pasare los datos de paginacion al padre'} })}>Back to StarShips</button></li>
         </ul>
         </div>
           <img src={ship.image} alt="A view of" />
