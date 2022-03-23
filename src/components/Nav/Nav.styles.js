@@ -1,7 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 const fadeIt = keyframes`
     to{ opacity: 1}
-`;
+`; 
+
 export const Nav = styled.div`
   display: flex;
   justify-cotent: center;
@@ -26,3 +27,4 @@ export const Nav = styled.div`
       }
   }
  `;
+

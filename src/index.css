@@ -7,10 +7,17 @@
     border-left:1px solid rgb(126, 126, 126);
     background-color: #0A0B0B;
     max-width: 80%;
+    text-align:center;
 }
 a {
   color: #fff;
   text-decoration: none;
+}
+a.active ,a.active:hover {
+  color:red !important;
+  opacity: 1 !important;
+  transition: none !important;
+  animation: none !important;
 }
 
 code {
