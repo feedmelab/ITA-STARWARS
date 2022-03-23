@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Header from "../components/Header";
 import Nav from "../components/Nav/Nav";
+import Modal from "../components/Modal/Modal";
 import ReactPlayer from 'react-player/youtube'
 
 
@@ -12,9 +13,17 @@ export default () =>
    const handleURL = (url) => {
         setUrl(url);
    }
+    const [showModal, setShowModal] = useState(false);
+    const [wichPage, setWichPage] = useState('login');
+
+    const openModal = (page)=> {
+        setWichPage(page?'login':'logup');  
+        setShowModal(prev => !prev);
+    }
     return (
         <div className="App">
-        <Header/>
+        <Modal showModal={showModal} setShowModal={setShowModal} wichPage={wichPage}/>
+        <Header openModal={openModal} />
         <Container className="d-flex justify-content-center align-items-center">
             <Nav></Nav>
         </Container>

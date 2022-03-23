@@ -10,10 +10,10 @@ export default () => {
     const [showModal, setShowModal] = useState(false);
     const [wichPage, setWichPage] = useState('login');
 
-  const openModal = (page)=> {
-   setWichPage(page?'login':'logup');  
-    setShowModal(prev => !prev);
-  }
+    const openModal = (page)=> {
+        setWichPage(page?'login':'logup');  
+        setShowModal(prev => !prev);
+    }
 return (
 <div className="App">
     <Modal showModal={showModal} setShowModal={setShowModal} wichPage={wichPage}/>

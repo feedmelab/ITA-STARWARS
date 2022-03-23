@@ -16,9 +16,7 @@ export const Cardy = styled(Card)`
   background-color: #2233;
   align-items: start;
   justify-content: start;
-  
   border-radius: 1rem;
-  //animation: 2s ${showIt} forwards;
   h4 {
       color: #fff;
       font-size: 1rem;

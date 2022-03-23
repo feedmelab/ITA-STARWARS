@@ -17,10 +17,10 @@
   width: 800px;
   height: 500px;
   box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.2);
-  background: #fff;;
-  color: #000;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   position: relative;
   align-items: center;
   z-index: 10;
@@ -36,6 +36,11 @@
   }
  `;
 export const ModalLogo = styled.img`
+width: 100%;
+height: 100%;
+object-fit: contain;
+border-radius: 10px 0 0 10px;
+background: rgba(0,0,0,0.6);
 `
  export const CloseModalButton = styled(MdClose)`
  cursor: pointer;
