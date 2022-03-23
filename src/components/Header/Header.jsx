@@ -5,7 +5,7 @@ import Logo from "./Logo/Logo"
 import { Header } from './Header.styles';
 
 
-export default () => (
+export default ({openModal}) => (
   <Header>
     <Container>
       <Row className="mt-5 d-flex align-items-center">
@@ -13,7 +13,7 @@ export default () => (
         <Col>
             <Logo />
         </Col>
-        <Col className="d-flex justify-content-end align-self-end"><LoginBox /></Col>
+        <Col className="d-flex justify-content-end align-self-end"><LoginBox openModal={openModal}/></Col>
       </Row>
     </Container>
   </Header>

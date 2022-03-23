@@ -1,14 +1,19 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { LoginBox } from './LoginBox.styles';
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => (
+export default ({openModal}) => {
+  return (
+    <>
   <LoginBox>
     <ul>
-      <li><a href="#">LOG IN</a></li>
+      <li><button className="btn btn-link" role="link" onClick={openModal}>LOG IN</button></li>
       <li>//</li>
-      <li><a href="#">SIGN IN</a></li>
+      <li><button className="btn btn-link" role="link">SIGN IN</button></li>
     </ul>
   </LoginBox>
-);
 
+  </>
+);
+}
