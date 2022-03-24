@@ -25,4 +25,12 @@ color: #888;
  opacity: 0;
 animation: 3s ${showIt} forwards;
 `
-
+export const CajaPilotos = styled.div`
+display: flex;
+margin-top: 0.8rem;
+max-width: 600px;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+align-content: space-around;
+`

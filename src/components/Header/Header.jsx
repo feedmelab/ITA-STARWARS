@@ -25,7 +25,7 @@ export default ({openModal}) => {
         </Col>
         <Col className="d-flex justify-content-end align-self-end">
         {
-          window.localStorage.getItem('isLogedIn')==='true'? (<button role="link" className="btn btn-link" onClick={logout}>Log Out</button>):(<LoginBox openModal={openModal}/>)
+          window.localStorage.getItem('isLogedIn')==='true'? (<button role="link" className="btn btn-link text-white text-decoration-none" onClick={logout}>Log Out</button>):(<LoginBox openModal={openModal}/>)
         }
         </Col>
       </Row>
