@@ -1,12 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
 
-.app {
-    margin: 0px auto;
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-    border-left:1px solid rgb(126, 126, 126);
-    max-width: 80%;
-    text-align:center;
+.App {
+  font-family: "Work Sans", sans-serif;
 }
 a {
   color: #fff;

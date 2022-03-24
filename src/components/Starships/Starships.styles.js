@@ -5,15 +5,16 @@ const showIt = keyframes`
 `;
 const smurfIt = keyframes`
     to{ border-radius: 50rem;
-    opacity: 0.8;}
+    opacity: 1;}
 `;
 export const Cardy = styled(Card)`
   display:flex;
   width: 75%;
   height: auto;
   padding: 2rem;
+  opacity: 0.8;
   margin-bottom: 1rem;
-  background-color: #2233;
+  background-color: #333;
   align-items: start;
   justify-content: start;
   border-radius: 1rem;
@@ -26,7 +27,7 @@ export const Cardy = styled(Card)`
       font-size: 0.8rem;
   }
   &:hover{
-      animation: 2s ${smurfIt} forwards !important;
+      animation: 1.5s ${smurfIt} forwards !important;
   }
 `;
 export const smallButton = css`
