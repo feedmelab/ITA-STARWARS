@@ -42,7 +42,7 @@ export default () => {
   return (
     <Container>
     <Row>
-      <Col className="d-flex mt-5 flex-column cursor-pointer justify-content-between align-items-center">
+      <Col className="d-flex mt-5 flex-row flex-wrap cursor-pointer justify-content-between align-content-center">
         {
           currentStr.map((c, key)=>{
             return (

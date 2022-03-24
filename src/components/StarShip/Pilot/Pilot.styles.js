@@ -10,6 +10,7 @@ export const PilotCard = styled.div`
  background-color: rgba(222,222,222,0.2);
  overflow: hidden;
  margin-top: 0.9rem;
+ margin-right: 1rem;
  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.3);
 `;
 

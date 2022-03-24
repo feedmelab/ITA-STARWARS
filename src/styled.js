@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 	body {
-        background: linear-gradient(rgba(120,0,0,.2), rgba(0,0,0,.5)), url("bg_stars2.jpg");
+        background: linear-gradient(rgba(120,0,0,.9), rgba(0,0,0,.5)), url("bg_stars2.jpg");
         background-attachment: fixed;
         font-family: "Work Sans", sans-serif;
 	}

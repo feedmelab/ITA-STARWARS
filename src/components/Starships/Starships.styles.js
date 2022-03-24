@@ -9,7 +9,7 @@ const smurfIt = keyframes`
 `;
 export const Cardy = styled(Card)`
   display:flex;
-  width: 75%;
+  width: 250px;
   height: auto;
   padding: 2rem;
   opacity: 0.8;
@@ -18,6 +18,7 @@ export const Cardy = styled(Card)`
   align-items: start;
   justify-content: start;
   border-radius: 1rem;
+  
   h4 {
       color: #fff;
       font-size: 1rem;

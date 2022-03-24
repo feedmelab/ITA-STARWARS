@@ -18,7 +18,9 @@ const Starship = () => {
             <Nav></Nav>
         </Container>
         <section>
+        <Container>
             <StarShip data={state.data}/>
+            </Container>
         </section>
     </div>)
 }
