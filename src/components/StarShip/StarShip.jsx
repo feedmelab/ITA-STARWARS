@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import Pilot from './Pilot/Pilot';
 import axios from 'axios';
 
+import { BsArrowLeftShort } from   'react-icons/bs';
+
 
 
 const StarShip =  ({data}) => {
@@ -24,16 +26,15 @@ const [dades, setDades] = useState([]);
 useEffect(()=>{
   setDades([])
   const imageIds = ship.pilots.map((pilot)=>pilot.match(/([^/]*)\/*$/)[1]);
- const fetchData = async (url, index) => {
-    await axios.get(url)
-      .then(async(res) => {
-        const pilot = await res.data;
-        Object.assign(pilot, {image: `https://starwars-visualguide.com/assets/img/characters/${imageIds[index]}.jpg`})
-        setDades((prev)=>[...prev, pilot])
-      })
-  }
+  const fetchData = async (url, index) => {
+    const data =  await axios.get(url)
+    const pilot = data.data;
+    Object.assign(pilot, {image: `https://starwars-visualguide.com/assets/img/characters/${imageIds[index]}.jpg`})
+    setDades((prev)=>[...prev, pilot])
+    }
   urlPilots.forEach((element, index) => {
-     fetchData(element, index);
+     fetchData(element, index)
+      .catch((error)=> console.error(error))
   });
 },[urlPilots, ship])
 
@@ -42,13 +43,14 @@ useEffect(()=>{
   return (
   <Container>
     <Row>
-      <Col className="d-flex justify-content-center align-items-center">
+      <Col className="d-flex mt-5 flex-row flex-wrap cursor-pointer justify-content-between align-content-center">
         <Foto>
         <div>
           <ul className='list-group'>
-            <li className='list-item'><button className="btn btn-link text-white text-decoration-none" role="link"  onClick={()=>navigate(`/starships`, { state: { data: 'por aqui le pasare los datos de paginacion al padre'} })}>Back to StarShips</button></li>
-        </ul>
+            <li className='list-item'><button className="btn btn-link text-white text-decoration-none" role="link"  onClick={()=>navigate(`/starships`, { state: { data: 'por aqui le pasare los datos de paginacion al padre'} })}><BsArrowLeftShort />back</button></li>
+          </ul>
         </div>
+        <Container>
           <img src={ship.image} alt="A view of" />
           <h3 className='mt-3 text-danger'>{ship.name}</h3>
           <Display>
@@ -64,7 +66,10 @@ useEffect(()=>{
                </CajaPilotos>
               ):null
             }
-            
+          </Display>
+        </Container>
+          <Display>
+
           </Display>
         </Foto>
       </Col>

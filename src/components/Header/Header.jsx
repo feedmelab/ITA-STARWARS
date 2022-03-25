@@ -4,16 +4,17 @@ import LoginBox from "./LoginBox/LoginBox";
 import Logo from "./Logo/Logo"
 import { Header } from './Header.styles';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default ({openModal}) => {
   const [isLogedIn, setIsLogedIn] = useState(window.localStorage.getItem('isLogedIn')) 
-  
+  const navigate = useNavigate();
   const logout = () => {
     console.log(isLogedIn);
     setIsLogedIn(false);
     window.localStorage.setItem('isLogedIn', false);
-    
+    navigate("/home");
   }
   return (
   <Header>

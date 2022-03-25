@@ -27,7 +27,8 @@ export default () => {
       .catch(console.error);
   },[currentPage]);
   
-  const getSpecificItem = (id) => {
+
+  const getSpecificItemById = (id) => {
     const item = currentStr.filter((a, index)=>id===index);
     return {...item};
   }
@@ -46,7 +47,7 @@ export default () => {
         {
           currentStr.map((c, key)=>{
             return (
-              <Cardy role="button" key={key} onClick={()=>navigate(`/starship/${key}`, { state: { data: getSpecificItem(key)} })}>
+              <Cardy role="button" key={key} onClick={()=>navigate(`/starship/${key}`, { state: { data: getSpecificItemById(key)} })}>
                 <Image />
                 <h4>{c.name}</h4>
                 <h5>{c.model}</h5>

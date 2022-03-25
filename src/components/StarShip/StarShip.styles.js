@@ -5,23 +5,35 @@ const showIt = keyframes`
 `;
 export const Foto = styled.div`
     margin-top: 2rem;
-    text-align: left;
-    width: auto;
+    
+    width: 100%;
     img {
-         object-fit: cover;
-         border-bottom:2px dotted #888;
-         opacity: 0;
-         animation: 2s ${showIt} forwards;
+        width: 100%;
+        object-fit: cover;
+        border-bottom:2px dotted #888;
+        opacity: 0;
+        animation: 2s ${showIt} forwards;
+    }
+    ul {
+        dispay: flex;
+        flex-direction: row;
+justify-content: flex-end;
+        list-style: none;
+    }
+    li {
+        dispay: flex;
+        align-items: flex-end;
+        width: auto;    
     }
 `;
 export const Display = styled.div`
 margin-top: 1.8rem;
-color:#333;
+color:#999;
  opacity: 0;
 animation: 3s ${showIt} forwards;
 `
 export const Span = styled.span`
-color: #888;
+color: #fff;
  opacity: 0;
 animation: 3s ${showIt} forwards;
 `

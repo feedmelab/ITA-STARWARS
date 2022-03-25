@@ -36,7 +36,7 @@ export const PilotText = styled.div`
      font-size: 1rem;
      font-weight: bold;
      line-height: 0.3rem;
-     color: black;
+     color: #888;
  }
  p span {
     font-weight: normal;
