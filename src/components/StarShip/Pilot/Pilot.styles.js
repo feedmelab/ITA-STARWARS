@@ -7,7 +7,7 @@ export const PilotCard = styled.div`
  height: auto;
  border-radius: 1rem;
  border: 1px solid #111;
- background-color: rgba(222,222,222,0.2);
+ background-color: rgba(222,222,222,0.6);
  overflow: hidden;
  margin-top: 0.9rem;
  margin-right: 1rem;
@@ -36,9 +36,10 @@ export const PilotText = styled.div`
      font-size: 1rem;
      font-weight: bold;
      line-height: 0.3rem;
-     color: #888;
+     color: #000;
  }
  p span {
-    font-weight: normal;
+    font-weight: bold;
+    color: #333;
  }
 `;

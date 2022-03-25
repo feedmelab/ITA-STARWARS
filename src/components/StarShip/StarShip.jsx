@@ -1,12 +1,13 @@
 
 import { Card, CardImg, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { Foto, Span, Display, CajaPilotos }  from './StarShip.styles';
+import { Foto, Span, Display, Caja }  from './StarShip.styles';
 import { useNavigate } from 'react-router-dom';
 import Pilot from './Pilot/Pilot';
 import axios from 'axios';
 
 import { BsArrowLeftShort } from   'react-icons/bs';
+import Films from '../Films/Films';
 
 
 
@@ -20,10 +21,10 @@ const StarShip =  ({data}) => {
 
 //pilots
 const [urlPilots, setUrlPilots] = useState(ship.pilots);
-
 const [dades, setDades] = useState([]);
+const [isLoading, setIsLoading] = useState(true);
 
-const [isLoading, setIsLoading] = useState(true)
+
 
 useEffect(()=>{
   setDades([])
@@ -45,38 +46,75 @@ useEffect(()=>{
 
   // fi pilots
 
+  //films
+  const [urlFilms, setUrlFilms] = useState(ship.films);
+  const [films, setFilms] = useState([]);
+  console.log(films);
+
+  useEffect(()=>{
+  
+  const fetchData = async (url, index) => {
+    const imageIds = ship.films.map((film)=>film.match(/([^/]*)\/*$/)[1]);
+    const data =  await axios.get(url)
+    const film = data.data;
+    Object.assign(film, {image: `https://starwars-visualguide.com/assets/img/films/${imageIds[index]}.jpg`})
+    setFilms((prev)=>[...prev, film])
+    // setIsLoading(false);
+    }
+  urlFilms.forEach((element, index) => {
+    fetchData(element, index)
+      .catch((error)=> console.error(error))
+  });
+},[urlFilms])
+  // fi films
+
   return (
   <Container>
     <Row>
       <Col className="d-flex mt-5 flex-row flex-wrap cursor-pointer justify-content-between align-content-center">
         <Foto>
-        <div>
-          <ul className='list-group'>
-            <li className='list-item'><button className="btn btn-link text-white text-decoration-none" role="link"  onClick={()=>navigate(`/starships`, { state: { data: 'por aqui le pasare los datos de paginacion al padre'} })}><BsArrowLeftShort />back</button></li>
-          </ul>
-        </div>
-        <Container>
+        
+        <Container className="d-flex flex-column">
           <img src={ship.image} onError={({ currentTarget }) => {
             currentTarget.onerror = null;
-            currentTarget.src="/Star-Wars-Wallpaper.jpg";
-           }}  alt="A view of" />
-          <h3 className='mt-3 text-danger'>{ship.name}</h3>
+            currentTarget.src="/big-placeholder.jpg";
+           }} className="align-self-center" alt="A view of" />
+           <div>
+          <ul className='list-group'>
+            <li className='list-item'><button className="btn me-3 btn-link text-white text-decoration-none" role="link"  onClick={()=>navigate(`/starships`, { state: { data: 'por aqui le pasare los datos de paginacion al padre'} })}><BsArrowLeftShort />back</button></li>
+          </ul>
+        </div>
+          <h3 className='mt-3 pt-3 text-danger border-top'>{ship.name}</h3>
           <Display>
             <p><Span>Model:</Span> {ship.model}</p>
             <p><Span>Manufacturer:</Span> {ship.manufacturer}</p>
             {(ship.pilots.length>0)?(<h3 className='mt-3 text-danger'>Pilots</h3>):null}
             {
               (ship.pilots.length>0)?(
-                <CajaPilotos>
+                <Caja>
                 {
                   (isLoading)? <><Spinner animation="border" size="sm" className='text-light' />Loading external data...please wait</>:<></>
                 }
                 {
                   dades.map((pilot, index)=>(<Pilot dadesPilot={pilot} key={index}/>))
                 }
-               </CajaPilotos>
+               </Caja>
               ):null
             }
+            {(ship.films.length>0)?(<h3 className='mt-3 text-danger'>Films</h3>):null}
+            {
+              (ship.films.length>0)?(
+                <Caja>
+                {/* {
+                  (isLoading)? <><Spinner animation="border" size="sm" className='text-light' />Loading external data...please wait</>:<></>
+                } */}
+                {
+                  films.map((film, index)=>(<Films dadesFilm={film} key={index}/>))
+                }
+               </Caja>
+              ):null
+            }
+            
           </Display>
         </Container>
           <Display>
