@@ -40,7 +40,7 @@ animation: 3s ${showIt} forwards;
 export const CajaPilotos = styled.div`
 display: flex;
 margin-top: 0.8rem;
-max-width: 600px;
+max-width: 100%;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-around;

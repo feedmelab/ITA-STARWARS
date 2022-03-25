@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { PilotCard, PilotImage, PilotText } from './Pilot.styles';
-import axios from 'axios';
 
 const Pilot = ({dadesPilot} ) => {
- console.log("dadspilot: ",dadesPilot)
+
 return (
   <PilotCard>
-    <PilotImage><img className="card-img-top" src={dadesPilot.image}  alt="Card  cap" /></PilotImage>
+    <PilotImage><img className="card-img-top" src={dadesPilot.image}  alt={dadesPilot.name} /></PilotImage>
     <PilotText>
       <p>Name: <span>{dadesPilot.name}</span></p>
       <p>Height: <span>{dadesPilot.name}</span></p>

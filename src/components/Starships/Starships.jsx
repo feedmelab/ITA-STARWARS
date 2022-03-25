@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import {  Col, Container, Row, Button, Image, Spinner } from 'react-bootstrap';
-import { Cardy } from './Starships.styles';
+import {  Col, Container, Row, Image, Spinner } from 'react-bootstrap';
+import { Cardy, LoadingMessage, LoadMoreButton } from './Starships.styles';
 import { useNavigate } from 'react-router-dom';
 
 import { MdDownloading} from "react-icons/md";
@@ -45,7 +45,7 @@ export default () => {
   return (
     <Container>
     <Row>
-      <Col className="d-flex mt-5 flex-row flex-wrap cursor-pointer justify-content-between align-content-center">
+      <Col className="d-flex mt-5 flex-row flex-wrap justify-content-center align-content-center">
         {
           currentStr.map((c, key)=>{
             return (
@@ -57,10 +57,10 @@ export default () => {
               )
           })
         }
-        {insetLoad?<div className='d-flex flex-row'><Spinner animation="border" size="sm" className='text-light me-2' /><p className="loading text-light"> Loading from an external API, please wait...</p></div>:<button  className="btn btn-link text-light text-decoration-none" role="link" onClick={()=>fetchMore()}><MdDownloading/> View more...</button>}
+        
       </Col>
     </Row>
-    <Row><Col></Col></Row>
+    <Row><Col className="d-flex mt-1 mb-5 flex-row flex-wrap  justify-content-center align-content-center">{insetLoad?<div className='d-flex flex-row'><Spinner animation="border" size="sm" className='text-light me-2' /><LoadingMessage> Loading from an external API, please wait...</LoadingMessage></div>:<LoadMoreButton  className="btn btn-link text-warning text-decoration-none text-sm" role="link" onClick={()=>fetchMore()}><MdDownloading/> VIEW MORE</LoadMoreButton>}</Col></Row>
     </Container>
     )
 }

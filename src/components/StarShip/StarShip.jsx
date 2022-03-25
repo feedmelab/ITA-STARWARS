@@ -1,5 +1,5 @@
 
-import { Card, CardImg, Col, Container, Row } from 'react-bootstrap';
+import { Card, CardImg, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { Foto, Span, Display, CajaPilotos }  from './StarShip.styles';
 import { useNavigate } from 'react-router-dom';
@@ -23,20 +23,25 @@ const [urlPilots, setUrlPilots] = useState(ship.pilots);
 
 const [dades, setDades] = useState([]);
 
+const [isLoading, setIsLoading] = useState(true)
+
 useEffect(()=>{
   setDades([])
   const imageIds = ship.pilots.map((pilot)=>pilot.match(/([^/]*)\/*$/)[1]);
   const fetchData = async (url, index) => {
+    
     const data =  await axios.get(url)
     const pilot = data.data;
     Object.assign(pilot, {image: `https://starwars-visualguide.com/assets/img/characters/${imageIds[index]}.jpg`})
     setDades((prev)=>[...prev, pilot])
+    setIsLoading(false);
     }
   urlPilots.forEach((element, index) => {
-     fetchData(element, index)
+    setIsLoading(true);
+    fetchData(element, index)
       .catch((error)=> console.error(error))
   });
-},[urlPilots, ship])
+},[])
 
   // fi pilots
 
@@ -51,7 +56,10 @@ useEffect(()=>{
           </ul>
         </div>
         <Container>
-          <img src={ship.image} alt="A view of" />
+          <img src={ship.image} onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src="/Star-Wars-Wallpaper.jpg";
+           }}  alt="A view of" />
           <h3 className='mt-3 text-danger'>{ship.name}</h3>
           <Display>
             <p><Span>Model:</Span> {ship.model}</p>
@@ -60,6 +68,9 @@ useEffect(()=>{
             {
               (ship.pilots.length>0)?(
                 <CajaPilotos>
+                {
+                  (isLoading)? <><Spinner animation="border" size="sm" className='text-light' />Loading external data...please wait</>:<></>
+                }
                 {
                   dades.map((pilot, index)=>(<Pilot dadesPilot={pilot} key={index}/>))
                 }

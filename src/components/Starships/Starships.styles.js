@@ -1,8 +1,6 @@
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import styled, { css, keyframes } from 'styled-components';
-const showIt = keyframes`
-    to{ opacity: 1}
-`;
+
 const smurfIt = keyframes`
     to{  transform: skewX(0deg) skewY(0deg);
     opacity: 1;}
@@ -18,7 +16,8 @@ export const Cardy = styled(Card)`
   align-items: start;
   justify-content: start;
   border-radius: 1rem;
-   transform: perspective(500px) rotateY(45deg);
+  transform: perspective(500px) rotateY(45deg);
+  
   h4 {
       color: #fff;
       font-size: 1rem;
@@ -34,6 +33,29 @@ export const Cardy = styled(Card)`
      cursor:url(https://cdn.custom-cursor.com/db/4554/32/arrow2611.png) , default!important;
   }
 `;
+export const LoadMoreButton = styled(Button)`
+    display:flex;
+    align-self: flex-end;
+    width: auto;
+    background-color: #000;
+    line-height: 0.65rem;
+    height: 1.5rem;
+    padding: auto;
+    opacity: 0.8;
+    transform: perspective(500px) rotateY(45deg);
+    border: none;
+    font-size: 0.6rem;
+    &:hover{
+        background-color: #000;
+        animation: 0.5s ${smurfIt} forwards !important;
+        cursor: pointer !important;
+    }
+`;
+export const LoadingMessage = styled.p`
+font-size: 0.7rem;
+
+color: #999;
+`
 export const smallButton = css`
     width: 1rem;
     border: 1px solid #333;
