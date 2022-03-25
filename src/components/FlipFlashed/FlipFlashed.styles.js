@@ -24,6 +24,7 @@ export const FlipFoto = styled.div`
     opacity:0.1 !important;
     filter: brightness(0.18) contrast(2.2);
     &:hover {
+        
         opacity:0.8 !important;
         filter: brightness(0.59) contrast(1.5);
     }

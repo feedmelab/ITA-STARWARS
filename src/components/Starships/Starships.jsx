@@ -1,9 +1,11 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import {  Col, Container, Row, Button, Image } from 'react-bootstrap';
+import {  Col, Container, Row, Button, Image, Spinner } from 'react-bootstrap';
 import { Cardy } from './Starships.styles';
 import { useNavigate } from 'react-router-dom';
+
+import { MdDownloading} from "react-icons/md";
 
 export default () => {
   
@@ -55,7 +57,7 @@ export default () => {
               )
           })
         }
-        {insetLoad?<p className="loading text-light">Loading from an external API, please wait...</p>:<button  className="btn btn-link" role="link" onClick={()=>fetchMore()}>View more...</button>}
+        {insetLoad?<div className='d-flex flex-row'><Spinner animation="border" size="sm" className='text-light me-2' /><p className="loading text-light"> Loading from an external API, please wait...</p></div>:<button  className="btn btn-link text-light text-decoration-none" role="link" onClick={()=>fetchMore()}><MdDownloading/> View more...</button>}
       </Col>
     </Row>
     <Row><Col></Col></Row>

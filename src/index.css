@@ -1,7 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
-
+:root {
+    --color-cursor: 220, 255, 255;
+    --cursor-outline-shade: 0.3;
+    --cursor-size: 10px;
+    --cursor-outline-size: 12px;
+    }
 .App {
   font-family: "Work Sans", sans-serif;
+  
+}
+.cursor {
+  z-index: 999;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 a {
   color: #fff;
