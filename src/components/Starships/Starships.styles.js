@@ -14,18 +14,19 @@ export const Cardy = styled(Card)`
   margin-bottom: 2rem;
   background-color: #333;
   align-items: start;
-  justify-content: start;
+  justify-content: center;
   border-radius: 1rem;
   transform: perspective(500px) rotateY(45deg);
   
   h4 {
       color: #fff;
       font-size: 1rem;
-      
+      font-family: "Pacifico", sans-serif;
   }
   h5 {
-      color: #777;
+      color: rgba(120,255,120,0.6);
       font-size: 0.8rem;
+      font-family: "Work Sans", sans-serif;
       
   }
   &:hover{

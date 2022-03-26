@@ -2,8 +2,10 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { SignInWrapper } from './SignIn.styles';
 
-const SignIn = () => (
-  <SignInWrapper>
+const SignIn = () => {
+    
+    return (
+    <SignInWrapper>
    <form>
    <Container>
       <h3>Please provide your information</h3>
@@ -33,5 +35,5 @@ const SignIn = () => (
   </form>
   </SignInWrapper>
 );
-
+    }
 export default SignIn;

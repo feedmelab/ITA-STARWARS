@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const LoginBox = styled.div`
 display: flex;
 align-self: end;
+font-size: 0.8rem;
 ul {
     list-style: none;
     color: white;

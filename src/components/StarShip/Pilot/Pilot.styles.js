@@ -5,9 +5,9 @@ export const PilotCard = styled.div`
  flex-direction: column;
  width: 15rem;
  height: auto;
- border-radius: 1rem;
+ border-radius: 0.5rem;
  border: 1px solid #111;
- background-color: rgba(222,222,222,0.6);
+ background-color: rgba(0,0,100,0.6);
  overflow: hidden;
  margin-top: 0.9rem;
  margin-right: 1rem;
@@ -20,6 +20,8 @@ export const PilotImage = styled.div`
  height: 10rem;
  img {
      object-fit: cover;
+     object-position: top;
+     box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.5);
  }
 
 `;
@@ -33,13 +35,16 @@ export const PilotText = styled.div`
  height: auto;
  p {
      margin-top: 0.3rem;
-     font-size: 1rem;
-     font-weight: bold;
+     font-size: 0.9rem;
+    
      line-height: 0.3rem;
-     color: #000;
+     color: #fff;
  }
  p span {
-    font-weight: bold;
-    color: #333;
+    font-weight: normal;
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    font-family: "Pacifico";
  }
 `;

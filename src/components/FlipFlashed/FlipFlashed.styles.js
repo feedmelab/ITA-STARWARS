@@ -15,8 +15,7 @@ margin-top: 2rem;
 `;
 
 const flashIt = keyframes`
-    to{ opacity:1;filter: brightness(0.50) contrast(1.5);box-shadow: inset 0px 0px 20px rgba(255,255,255,0.3);
-       }
+    to{ opacity:1;filter: brightness(0.50) contrast(1.5);box-shadow: inset 0px 0px 20px rgba(255,255,255,0.3);}
 `;
 export const FlipFoto = styled.div`
     display: flex;
@@ -26,7 +25,7 @@ export const FlipFoto = styled.div`
     background-size: cover;
     opacity: 0;
     filter: brightness(0.19) contrast(2.2);
-    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.3);
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.8);
     animation: 10s ${flashIt} forwards;
    
 `;
@@ -37,12 +36,14 @@ export const FlipText = styled.div`
     padding: 6rem;
     width: inherit;
     height: 80%;
-    font-size: 2vw;
+    font-size: 4vw;
     font-weight: bold;
     line-height: 8vh;
+    
     & p {
         color: white !important;
-        filter: drop-shadow(0 0 0.75rem crimson);
+        filter: drop-shadow(0 0 0.75rem black);
+        font-family: "Dosis", sans-serif;
     }
 `;
 

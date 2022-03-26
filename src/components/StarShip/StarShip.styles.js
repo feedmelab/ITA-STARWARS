@@ -10,6 +10,7 @@ export const Foto = styled.div`
     border-bottom-right-radius: 5rem;
     box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.5);
     width: 100%;
+    font-family: "Pacifico", sans-serif;
     & img {
         display: flex;
 
@@ -30,16 +31,32 @@ export const Foto = styled.div`
         align-items: flex-end;
         width: auto;    
     }
+    h3 {
+        font-family: 'Dosis', sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 0 0.2rem 0.2rem rgba(255,0,255,0.2);
+    }
 `;
 export const Display = styled.div`
+display: flex;
+flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
 margin-top: 1.8rem;
-color:#999;
+color:#666;
 opacity: 0;
 animation: 3s ${showIt} forwards;
+margin-bottom: 3rem;
 `
 export const Span = styled.span`
-color: #fff;
- opacity: 0;
+color: #888;
+font-size: 1.2rem;
+opacity: 0;
+font-weight: bold;
+font-family: 'Syncopate', sans-serif;
 animation: 3s ${showIt} forwards;
 `
 export const Caja = styled.div`

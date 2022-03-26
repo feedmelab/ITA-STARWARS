@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
 :root {
     --color-cursor: 220, 255, 255;
     --cursor-outline-shade: 0.3;
@@ -7,7 +10,6 @@
     }
 .App {
   font-family: "Work Sans", sans-serif;
-  
 }
 .cursor {
   z-index: 999;
