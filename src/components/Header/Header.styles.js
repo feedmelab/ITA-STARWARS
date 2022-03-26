@@ -9,7 +9,15 @@ export const Header = styled.div`
 	justify-content: space-between;
 	border-bottom: 1px solid #232424;
 	padding-bottom: 2rem;
+	span {
+		font-family: "Pacifico", sans-serif !important;
+		color: white;
+	}
+	span > span {
+		color: #999;
+	}
 `;
+export const Espan = styled.span``;
 export const LogOutButton = styled.button`
 	display: flex;
 	border: none;

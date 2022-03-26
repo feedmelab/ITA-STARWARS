@@ -2,7 +2,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import LoginBox from "./LoginBox/LoginBox";
 import Logo from "./Logo/Logo";
-import { Header, LogOutButton } from "./Header.styles";
+import { Header, LogOutButton, Espan } from "./Header.styles";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,10 @@ export default ({ openModal }) => {
 					<Col className="d-flex flex-row justify-content-end align-self-end">
 						{window.localStorage.getItem("isLogedIn") === "true" ? (
 							<>
-								<span className="text-light d-flex mr-2">Hi! {user.name}</span>,<LogOutButton onClick={logout}>logout</LogOutButton>
+								<span>
+									<span>Hi!</span> {user.name}
+								</span>
+								,<LogOutButton onClick={logout}>logout</LogOutButton>
 							</>
 						) : (
 							<LoginBox openModal={openModal} />
