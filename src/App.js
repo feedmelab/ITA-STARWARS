@@ -1,2 +1,2 @@
 import Routes from "./application/Routes";
-export default () => <Routes/>
+export default () => <Routes />;

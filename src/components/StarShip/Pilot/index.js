@@ -1,3 +1,3 @@
-import Pilot from './Pilot';
+import Pilot from "./Pilot";
 
 export default Pilot;

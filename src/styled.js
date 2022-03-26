@@ -1,8 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 const font3 = "https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap";
 const font1 = "https://fonts.googleapis.com/css2?family=Work+Sans&display=swap";
 const font2 = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
 const font4 = "https://fonts.googleapis.com/css2?family=Dosis&display=swap";
+
 // const getHeightDoc = () => {
 //   const { scrollHeight: height } = document.body;
 //   return {
@@ -38,6 +39,6 @@ export const GlobalStyle = createGlobalStyle`
         src: url(${font1});
     }
     
-`; 
+`;
 
 // font-family: "Work Sans", sans-serif;
