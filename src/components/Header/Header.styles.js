@@ -29,4 +29,5 @@ export const LogOutButton = styled.button`
 	&:hover {
 		animation: 0.5s ${showIt} forwards;
 	}
+	
 `;

@@ -19,7 +19,7 @@ export default () => {
 		<div className="App">
 			<Modal showModal={showModal} setShowModal={setShowModal} wichPage={wichPage} />
 			<Header openModal={openModal} />
-			<Container className="d-flex justify-content-center align-items-center">
+			<Container className="d-flex flex-column justify-content-center align-items-center">
 				<Nav></Nav>
 			</Container>
 			<section>
